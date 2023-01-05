@@ -3,9 +3,10 @@
 #include <ctime>
 
 class Track{
-    std::string name_;
-    int duration_; 
-    std::tm* date_;
+private:
+    std::string name;
+    int duration; 
+    std::tm* date;
     bool start;
     bool pause;
 
@@ -18,4 +19,5 @@ public:
     void started();
     bool is_started();
     void stoped();
+    bool is_paused();
 };

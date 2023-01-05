@@ -50,13 +50,20 @@ void Player::print(){
 };
 
 void Player::play(std::string name){
-    for(auto track: tracks){
-        if(track->get_name() == name){
-            current_track = track;
-            if(!track->is_started()){
-                track->started();
-                track->info();
-                std::cout << " is playing" << std::endl;
+    if(current_track->is_paused()){
+        current_track->started();
+        current_track->info();
+        std::cout << " continues to play" << std::endl;
+    } else {
+        for(auto track: tracks){
+            if(track->get_name() == name){
+                current_track->stoped();
+                current_track = track;
+                if(!track->is_started()){
+                    track->started();
+                    track->info();
+                    std::cout << " starts to play" << std::endl;
+                }
             }
         }
     }
