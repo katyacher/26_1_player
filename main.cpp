@@ -19,7 +19,7 @@ int main() {
             std::cout << "Enter a number of tracks in your player:" << std::endl;
             int number = 0;
             std::cin >> number;
-            Player* player = new Player(number);
+            player = new Player(number);
             break;
         } else {
             std::cout << "Unknown command. Try again: ";
