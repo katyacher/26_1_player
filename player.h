@@ -7,16 +7,18 @@
 class Player{
     std::vector<Track*> tracks;
     Track* current_track;
+    bool is_playing;
+    bool paused;
     
 public: 
     Player();
     Player(int number);
     ~Player();
 
-    bool has_track(std::string name);
-    void print();
-    void play(std::string name);
+    bool contains(std::string name);
+    void play();
     void pause();
     void next();
     void stop();
+    void print();
 };

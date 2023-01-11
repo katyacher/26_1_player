@@ -1,23 +1,17 @@
 #pragma once
 #include <iostream>
 #include <ctime>
+#include <iomanip>
 
 class Track{
 private:
     std::string name;
-    int duration; 
+    std::tm duration; 
     std::tm* date;
-    bool start;
-    bool pause;
-
+  
 public:
-    Track(std::string name, int duration);
+    Track(std::string name, std::tm duration);
 
     std::string get_name();
     void info();
-    void paused();
-    void started();
-    bool is_started();
-    void stoped();
-    bool is_paused();
 };

@@ -1,12 +1,9 @@
 #include <iostream>
 #include "track.h"
 
-Track::Track(std::string name_, int duration_):name(name_), duration(duration_){
+Track::Track(std::string name_, std::tm duration_tm):name(name_), duration(duration_tm){
     std::time_t time  = std::time(nullptr);
     date = localtime(&time);
-
-    start = false;
-    pause = false;
 }
 
 std::string Track::get_name(){
@@ -14,29 +11,7 @@ std::string Track::get_name(){
 }
 
 void Track::info(){
-    std::cout << name << " (date: " << date->tm_mday << "." << date->tm_mon << "." << date->tm_year << ", ";
-    std::cout << "duration: " << duration << ")" << std::endl;
-}
-
-void Track::paused(){
-    if(!pause){
-        pause = true;
-        std::cout << "Track " << name << " on pause" << std::endl;
-    }
-}
-
-void Track::started(){
-    start = true;
-}
-
-void Track::stoped(){
-    start = false;
-}
-
-bool Track::is_started(){
-    return start;
-}
-
-bool Track::is_paused(){
-    return pause;
+    std::cout << "Track name: " << name <<std::endl;
+    std::cout << "Creation date: "  << std::asctime(date);
+    std::cout << "Duration: " << std::put_time(&duration,"%M:%S") << std::endl;
 }
