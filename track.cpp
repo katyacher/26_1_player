@@ -15,7 +15,7 @@ std::string Track::get_name(){
 
 void Track::info(){
     std::cout << name << " (date: " << date->tm_mday << "." << date->tm_mon << "." << date->tm_year << ", ";
-    std::cout << "duration: " << duration << ")"; 
+    std::cout << "duration: " << duration << ")" << std::endl;
 }
 
 void Track::paused(){

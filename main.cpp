@@ -5,9 +5,6 @@ int main() {
     std::cout << "26.1 Player\n";
 
     Player* player = new Player();
-    
-    player->print();
-    /*
 
     std::cout << "Ganarate the tracks in the player automaticaly? (y/n): ";
     std::string answer;
@@ -15,25 +12,27 @@ int main() {
     while(answer != "y" || answer != "n"){
         std::cin >> answer;
         if(answer == "y"){
-            player.autoInit();
+            std::cout << "Tracklist created automaticaly:" << std::endl;
+            player->print();
         } else if(answer == "n"){
-            std::cout << "Enter number of tracks in your player:" << std::endl;
+            std::cout << "Enter a number of tracks in your player:" << std::endl;
             int number = 0;
             std::cin >> number;
-            player.init(number);
+            Player* player = new Player(number);
         } else {
             std::cout << "Unknown command. Try again: ";
         }
     }
-    */
-
+    
     std::string command = "";
 
     while (command != "exit"){
         std::cout << "Enter the command (play/pause/stop/next/exit): ";
         std::cin >> command;
         if(command == "play"){
-            std::cout << " Input track name: ";
+            std::cout << "Choose a track from the following: " << std::endl;
+            player->print();
+
             std::string name;
             std::cin >> name;
             if(player->has_track(name)){

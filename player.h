@@ -13,7 +13,6 @@ public:
     Player(int number);
     ~Player();
 
-    void addTrack(std::string name, int duration);
     bool has_track(std::string name);
     void print();
     void play(std::string name);

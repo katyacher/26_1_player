@@ -4,10 +4,12 @@
 
 Player::Player(){
     tracks = {};
+    std::vector<std::string> names {"Concert", "Symphony", "Opera", "Sonata", "Cantata"};
     for(int i = 0; i < 5; i++){
-        std::string name = "Track" + std::to_string(i + 1);
-        int duration = std::rand() % 10;
-        addTrack(name, duration); 
+        std::string name = names[i];
+        int duration = (rand() % 120) + 180;
+        Track* track = new Track(name, duration); //the date creates automatically
+        tracks.push_back(track); 
     }
     current_track = tracks[0];
 }
@@ -22,18 +24,12 @@ Player::Player(int number){
         std::cout << "Enter a duration of your track: ";
         std::cin >> duration;
 
-        addTrack(name, duration); //the date creates automatically
+        Track* track = new Track(name, duration); //the date creates automatically
+        tracks.push_back(track); 
     }
     current_track = tracks[0];
 }
 
-
-void Player::addTrack(std::string name, int duration){
-    Track* track = new Track(name, duration);
-    tracks.push_back(track);
-}
-
-    
 bool Player::has_track(std::string name){
     for(auto track: tracks){
         if(track->get_name() == name){
@@ -85,7 +81,7 @@ void Player::stop(){
     }
 }
 Player::~Player(){
-    for(auto it: tracks){
-        delete it;
+    for(auto track: tracks){
+        delete track;
     }
 }
