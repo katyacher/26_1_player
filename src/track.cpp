@@ -11,7 +11,7 @@ std::string Track::get_name(){
 }
 
 void Track::info(){
-    std::cout << "Track name: " << name <<std::endl;
+    std::cout << "Track name: " << name << std::endl;
     std::cout << "Creation date: "  << std::asctime(date);
     std::cout << "Duration: " << std::put_time(&duration,"%M:%S") << std::endl;
 }
