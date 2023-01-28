@@ -15,7 +15,5 @@ public:
     Track(std::string name_, std::tm duration_tm);
 
     std::string get_name();
-    //void set_name(std::string name_);
-    //void set_duration(std::tm duration_tm);
     void info();
 };

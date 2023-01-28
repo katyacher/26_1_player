@@ -16,15 +16,7 @@ Track::Track(std::string name_, std::tm duration_tm):name(name_), duration(durat
 std::string Track::get_name(){
     return name;
 }
-/*
-void Track::set_name(std::string name_){
-    name = name_;
-}
 
-void Track::set_duration(std::tm duration_tm){
-    duration = duration_tm;
-}
-*/
 void Track::info(){
     std::cout << "Track name: " << name << std::endl;
     std::cout << "Creation date: "  << std::asctime(date);
