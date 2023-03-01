@@ -1,21 +1,27 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <string>
 #include "track.h"
 
 class Player{
-    std::vector<Track*> tracks;
+private:
+    std::vector<Track> tracks;
     Track* current_track;
-    bool is_playing;
-    bool paused;
+    enum State{
+        Stop,
+        Play,
+        Pause
+    };
+
+    State current_state;
+
+    bool contains(std::string name);
     
 public: 
     Player();
     Player(int number);
     ~Player();
 
-    bool contains(std::string name);
     void play();
     void pause();
     void next();
