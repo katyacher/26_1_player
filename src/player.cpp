@@ -7,7 +7,7 @@ Player::Player(){
     tracks = {};
     std::vector<std::string> names {"Concert", "Symphony", "Opera", "Sonata", "Cantata"};
 
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < names.size(); i++){
         std::string name = names[i];
 
         std::tm duration_tm{};
