@@ -1,6 +1,13 @@
 #include <iostream>
 #include "track.h"
 
+Track::Track(){
+    name = "Unknown";
+    duration = {};
+    std::time_t time  = std::time(nullptr);
+    date = localtime(&time);
+}
+
 Track::Track(std::string name_, std::tm duration_tm):name(name_), duration(duration_tm){
     std::time_t time  = std::time(nullptr);
     date = localtime(&time);
