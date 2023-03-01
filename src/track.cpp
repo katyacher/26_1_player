@@ -4,7 +4,11 @@
 Track::Track(){
     name = "Unknown";
     duration = {};
+<<<<<<< HEAD
     std::time_t time = std::time(nullptr);
+=======
+    std::time_t time  = std::time(nullptr);
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
     date = localtime(&time);
 }
 

@@ -19,9 +19,15 @@ Player::Player(){
         tracks.push_back(track); 
     }
 
+<<<<<<< HEAD
     current_track = &tracks[0];
     current_state = Stop;
 }
+=======
+    current_track = tracks[0];
+    current_state = Stop;
+};
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
 
 Player::Player(int number){
     for(int i = 0; i < number; i++){
@@ -36,9 +42,15 @@ Player::Player(int number){
         Track track = Track(name, duration_tm); //the date creates automatically
         tracks.push_back(track); 
     }
+<<<<<<< HEAD
     current_track = &tracks[0];
     current_state = Stop;
 }
+=======
+    current_track = tracks[0];
+    current_state = Stop;
+};
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
 
 bool Player::contains(std::string name){
     for(auto track: tracks){
@@ -60,14 +72,23 @@ void Player::play(){
         } else {
             for(auto track: tracks){
                 if(track.get_name() == name){
+<<<<<<< HEAD
                     current_track = &track;
                     std::cout << current_track->get_name() << " plays. " << std::endl;
+=======
+                    current_track = track;
+                    std::cout << current_track.get_name() << " plays. " << std::endl;
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
                     current_state = Play;
                 }
             } 
         }   
     } else if(current_state == Pause) {
+<<<<<<< HEAD
         std::cout << current_track->get_name() << " continues to play" << std::endl;
+=======
+        std::cout << current_track.get_name() << " continues to play" << std::endl;
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
         current_state = Play;
     }
 }
@@ -75,20 +96,34 @@ void Player::play(){
 void Player::pause(){
     if(current_state == Play) {
         current_state = Pause;
+<<<<<<< HEAD
         std::cout << current_track->get_name() << " paused" << std::endl;
+=======
+        std::cout << current_track.get_name() << " paused" << std::endl;
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
     }
 }
 
 void Player::next(){
+<<<<<<< HEAD
     current_track = &(tracks[std::rand() % tracks.size()]);
     current_state = Play;
     std::cout << current_track->get_name() << " plays. " << std::endl;
+=======
+    current_track = (tracks[std::rand() % tracks.size()]);
+    current_state = Play;
+    std::cout << current_track.get_name() << " plays. " << std::endl;
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
 }
 
 void Player::stop(){
     if(current_state == Play || current_state == Pause){
         current_state = Stop;
+<<<<<<< HEAD
         std::cout << current_track->get_name() << " is stoped." << std::endl;
+=======
+        std::cout << current_track.get_name() << " is stoped." << std::endl;
+>>>>>>> 15b16a686eeaa1735f5560c8e886c4149927d70c
     }
 }
 
